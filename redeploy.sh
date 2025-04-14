@@ -3,6 +3,9 @@
 echo "🔄 Kodlar GitHub'dan çekiliyor..."
 git pull origin main || { echo "❌ Git pull başarısız"; exit 1; }
 
+echo "⚙️ Ortam dosyası hazırlanıyor..."
+cp .env.example .env || { echo "❌ .env dosyası kopyalanamadı"; exit 1; }
+
 echo "🧨 Önceki Compose ortamı kapatılıyor (varsa)..."
 docker compose down || true
 
