@@ -31,7 +31,7 @@ def webhook():
     elif request.method == "POST":
         data = request.get_json()
         log_to_file(data)
-        return "OK", 200
+        return "Doğrulama başarılı", 200
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 10000))
